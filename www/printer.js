@@ -160,14 +160,7 @@ exports.pick = function (options, callback, scope)
     var fn     = this._createCallbackFn(callback, scope),
         params = this._mergeWithDefaults({ ui: options });
 
-    if (isIOS)
-    {
-        exec(fn, null, 'Printer', 'pick', [params]);
-    }
-    else if (fn)
-    {
-        fn(null);
-    }
+    exec(fn, null, 'Printer', 'pick', [params]);
 };
 
 /**
